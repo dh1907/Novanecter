@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Company Name</title>
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            z-index: 100;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        section:nth-child(even) {
+            background-color: #e2e2e2;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .project-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .project-card {
+            background: #fff;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .skills-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .skill {
+            background: #333;
+            color: white;
+            margin: 5px;
+            padding: 10px 20px;
+            border-radius: 25px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ddd;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <h2>Welcome Sir/Medam</h2>
+        <p>
+            Welcome to my website! I am a passionate developer with a focus on creating beautiful, efficient, and user-friendly web applications. 
+            I love solving problems and continuously improving my skills to stay at the forefront of technology. 
+            Feel free to explore my projects and get in touch if you'd like to collaborate!
+        </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="../company.html/my1.jpg" alt="Project 1">
+                <h3>Project One</h3>
+                <p>A brief description of this amazing project that showcases my skills.</p>
+            </div>
+            <div class="project-card">
+                <img src="../company.html/my2.jpg" alt="Project 2">
+                <h3>Project Two</h3>
+                <p>A brief description of this second awesome project. Features include...</p>
+            </div>
+            <div class="project-card">
+                <img src="../company.html/my3.jpg" alt="Project 3">
+                <h3>Project Three</h3>
+                <p>Details of project number three. I worked on...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">React</div>
+            <div class="skill">Node.js</div>
+            <div class="skill">Python</div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>If you'd like to get in touch with me for potential collaboration or job opportunities, feel free to reach out!</p>
+        <footer>
+            <p>Email: <a href="mailto:mywebsite@gmail.com">mywebsite@gmail.com</a></p>
+            <p>Phone: +91 9700980096</p>
+        </footer>
+    </section>
+</body>
+</html>
