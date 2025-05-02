@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel Explorer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    header, footer {
+      background-color: #1e88e5;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #1976d2;
+    }
+
+    nav button {
+      background: none;
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    nav button:hover {
+      background-color: #1565c0;
+    }
+
+    .section {
+      display: none;
+      padding: 20px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      margin: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .dest-img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 600px) {
+      nav button {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Travel Explorer</h1>
+    <input type="text" id="search" placeholder="Search destinations..." oninput="filterDestinations()">
+  </header>
+
+  <nav>
+    <button onclick="showSection('explore')">Explore</button>
+    <button onclick="showSection('book')">Book</button>
+    <button onclick="showSection('itinerary')">Itinerary</button>
+    <button onclick="showSection('blogs')">Blogs</button>
+    <button onclick="showSection('reviews')">Reviews</button>
+    <button onclick="showSection('profile')">Profile</button>
+  </nav>
+
+  <div id="explore" class="section active">
+    <h2>Top Destinations</h2>
+    <div class="grid" id="destinationList">
+      <div class="card">
+        <img class="dest-img" src="https://picsum.photos/id/1015/400/200" alt="Beach">
+        <h3>Bali, Indonesia</h3>
+        <p>Beautiful beaches and vibrant culture.</p>
+      </div>
+      <div class="card">
+        <img class="dest-img" src="https://picsum.photos/id/1005/400/200" alt="Mountains">
+        <h3>Swiss Alps</h3>
+        <p>Stunning views and skiing adventures.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="book" class="section">
+    <h2>Book Your Trip</h2>
+    <form onsubmit="event.preventDefault(); alert('Trip booked!');">
+      <label>Destination</label>
+      <input type="text" placeholder="e.g. Bali, Indonesia" required>
+      <label>Dates</label>
+      <input type="date" required>
+      <label>Travelers</label>
+      <select>
+        <option>1</option>
+        <option>2</option>
+        <option>3+</option>
+      </select>
+      <button type="submit">Book Now</button>
+    </form>
+  </div>
+
+  <div id="itinerary" class="section">
+    <h2>Your Itinerary</h2>
+    <div class="card">No trips yet. Book your adventure!</div>
+  </div>
+
+  <div id="blogs" class="section">
+    <h2>Travel Blogs</h2>
+    <div class="card">
+      <h3>Backpacking in Europe</h3>
+      <p>By @globetrotter</p>
+      <p>Europe on a budget – best cities and train routes.</p>
+    </div>
+    <div class="card">
+      <h3>Hidden Gems of South America</h3>
+      <p>By @wanderlust</p>
+      <p>From Colombia to Patagonia – find peace off the beaten path.</p>
+    </div>
+  </div>
+
+  <div id="reviews" class="section">
+    <h2>User Reviews</h2>
+    <div class="card">
+      <p>⭐⭐⭐⭐⭐</p>
+      <p>"Had an amazing time in Switzerland. App was super helpful!" – Alice</p>
+    </div>
+    <div class="card">
+      <p>⭐⭐⭐⭐</p>
+      <p>"Booking was easy and fast. Will use again." – John</p>
+    </div>
+  </div>
+
+  <div id="profile" class="section">
+    <h2>Your Profile</h2>
+    <form>
+      <label>Name</label>
+      <input type="text" placeholder="Your Name">
+      <label>Email</label>
+      <input type="email" placeholder="you@example.com">
+      <button type="submit" onclick="event.preventDefault(); alert('Profile saved!')">Save</button>
+    </form>
+  </div>
+
+  <footer>
+    &copy; 2025 Travel Explorer. All rights reserved.
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function filterDestinations() {
+      const input = document.getElementById('search').value.toLowerCase();
+      const cards = document.querySelectorAll('#destinationList .card');
+      cards.forEach(card => {
+        const title = card.querySelector('h3').innerText.toLowerCase();
+        card.style.display = title.includes(input) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
